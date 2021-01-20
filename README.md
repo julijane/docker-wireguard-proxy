@@ -28,25 +28,25 @@ Example output:
 
 Configuration/ Environment variables:
 
-*   LOCAL_IP
+*   **LOCAL_IP**
 
     Our VPN-IP
 
-*   LOCAL_PRIVKEY
+*   **LOCAL_PRIVKEY**
 
     Our private key
 
 You can configure up to 20 peers, replace n with a number from 1 to 20:
 
-*   REMOTEn_PUBKEY
+*   **REMOTEn_PUBKEY**
 
     Public key of the peer
 
-*   REMOTEn_IP
+*   **REMOTEn_IP**
 
     Peer VPN-IP
 
-*   REMOTEn_ENDPOINT
+*   **REMOTEn_ENDPOINT**
 
     Only on client: Specify hostname/ip and port where to connect to
 
@@ -56,7 +56,7 @@ Port forwardings are configured as following:
 
 On the forwarding side:
 
-*   REMOTEn_TOVPN
+*   **REMOTEn_TOVPN**
 
     Provide a comma separated list of specifications. Each specification consists of
     3 tuples separated by colons.
@@ -67,10 +67,10 @@ On the forwarding side:
 
 On the receiving side:
 
-*   REMOTEn_FROMVPN
+*   **REMOTEn_FROMVPN**
 
     Provide a comma separated list of specifications.Each specification consists of
-    3 tuples separated by colons.
+    4 tuples separated by colons.
 
     Example: ```7000:tcp:whoami:80```
     Forward TCP connections incoming from the other VPN side on port 7000 to
