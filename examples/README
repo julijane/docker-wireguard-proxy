@@ -1,0 +1,12 @@
+Working example of a reverse proxy configuration.
+
+On the serverside a webserver on port 8000 is opened. Every request
+is sent to the VPN server, via the VPN and from the VPN client to
+a separate docker container (running example application whoami)
+there.
+
+Add keys, set endpoint, run. Then you can on the server side docker
+
+    wget -q -O- http://localhost:8000/
+
+and you will get the response from the "whoami" server.

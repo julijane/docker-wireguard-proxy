@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  vpnclient:
+    image: ghcr.io/julijane/wireguard-proxy
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - LOCAL_PRIVKEY=...
+      - LOCAL_IP=10.0.0.2
+      - REMOTE1_PUBKEY=...
+      - REMOTE1_IP=10.0.0.1
+      - REMOTE1_FROMVPN=7000:tcp:whoami:80
+      - REMOTE1_ENDPOINT=192.168.100.100:51820
+    restart: always
+
+  whoami:
+    image: containous/whoami

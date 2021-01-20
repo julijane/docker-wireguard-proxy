@@ -1,0 +1,7 @@
+{
+  auto_https off
+}
+
+http://localhost {
+  reverse_proxy http://vpn:7000
+}

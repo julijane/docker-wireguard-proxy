@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  vpn:
+    image: ghcr.io/julijane/wireguard-proxy
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - LOCAL_PRIVKEY=...
+      - LOCAL_IP=10.0.0.1
+      - REMOTE1_PUBKEY=...
+      - REMOTE1_IP=10.0.0.2
+      - REMOTE1_TOVPN=7000:tcp:7000
+    ports:
+      - 51820:51820/udp
+
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - 127.0.0.1:8000:80
