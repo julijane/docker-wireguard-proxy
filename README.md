@@ -7,7 +7,8 @@ a kind of reverse proxy and could be used for example as an alternative to
 ngrok and similar services.
 
 See [examples](examples) for a example configuration of server and client
-setup using docker-compose.
+setup using docker-compose. Wireguard kernel module must be built/installed
+and loaded on the host system.
 
 The possibilities are endless :)
 
